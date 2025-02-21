@@ -1,4 +1,5 @@
 import sys
+import os
 from src.encoder import encode_image
 from src.decoder import decode_image
 
@@ -10,12 +11,16 @@ def main():
     action = sys.argv[1]
 
     if action == "encode":
-        if len(sys.argv) != 5:
-            print("Usage: python app.py encode <image_path> <message> <output_image_path>")
+        if len(sys.argv) != 4:
+            print("Usage: python app.py encode <image_path> <message>")
             sys.exit(1)
         image_path = sys.argv[2]
         message = sys.argv[3]
-        output_image_path = sys.argv[4]
+
+        # Automatically create a new filename for the encoded image
+        file_name, file_extension = os.path.splitext(image_path)
+        output_image_path = f"{file_name}_encoded{file_extension}"
+
         encode_image(image_path, message, output_image_path)
 
     elif action == "decode":
