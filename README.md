@@ -1,3 +1,25 @@
-// To encrypt image: python app.py encode assets/yourimage "YourSecretMessage" assets/newencryptedimagename
+CryptNova is a simple yet powerful image steganography tool that allows you to hide secret messages inside image files by modifying the least significant bits of pixel data. This method ensures that your message remains invisible to the human eye while being securely embedded within the image.
 
-// To decrypt image: python app.py decode assets/newencryptedimagename
+____________________________________________________________________________________________________________
+
+How to Use CryptNova...
+
+     Encoding a Message:
+
+        To hide a message inside an image: python app.py encode <image_filename> "<your_message>"
+
+            Example: python app.py encode assets/cat.jpg "Testing Testing... Is this thing on?"
+
+             The tool will automatically save the encoded image as cat_encoded.jpg in the assets/ folder.
+
+     Decoding a Hidden Message:
+
+        To reveal a hidden message from an encoded image: python app.py decode <encoded_image_filename>
+
+            Example: python app.py decode assets/cat_encoded.jpg
+
+             This will output the hidden message directly to the terminal.
+
+____________________________________________________________________________________________________________
+
+Authors: Daanish Syed Hussain and Iman Rehan. 
